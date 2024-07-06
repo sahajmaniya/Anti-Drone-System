@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+ <script>
+  // JavaScript code to handle the boolean flag and show the alert
+  function showAlert() {
+      var flag = true; // Replace this with your actual boolean flag value
+      if (flag) {
+          alert('Alert: The drone is detected');
+      }
+  }
+
+  // Call the showAlert function when the page loads
+</script>
+   <style>
+    * {
+      margin: 0px;
+      font-family:Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    header {
+      background-image: url("./dronelogo.jpg");
+      height: 100vh;
+      width: 100%;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-color: rgba(0, 0, 0, 0.226);
+
+
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+
+
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+      display: block;
+      font-weight: bold;
+    }
+
+    a:hover {
+      border-bottom: 2px solid lightskyblue;
+    }
+
+    li {
+      padding: 15px;
+      margin-left: 30px;
+    }
+
+    .maincontent {
+      height: 400px;
+      width: 500px;
+      /* border: 1px solid black; */
+      /* background-color:azure;
+       */
+      background-color: #ffffff;
+      background-image: url("https://www.transparenttextures.com/patterns/brushed-alum-dark.png");
+      /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+      margin-left: 600px;
+      margin-top: 50px;
+      border-top: 3px solid black;
+      border-bottom: 3px solid black;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+    }
+
+    .heading {
+      font-size: 25px;
+      font-weight: 700;
+      padding-top: 10px;
+
+    }
+    .subheading{
+      font-size: 20px;
+      font-weight: 500;
+      margin-top: 20px;
+    }
+
+
+    input[type=file]::file-selector-button {
+      /* margin-right: 20px;   */
+      border: none;
+      background: rgba(0, 0, 0, 0.541);
+      padding: 8px 20px;
+      border-radius: 10px;
+      color: #fff;
+      cursor: pointer;
+      transition: background .2s ease-in-out;
+      margin-top: 30px;
+    }
+
+    input[type=file]::file-selector-button:hover {
+      background: #0d45a5;
+    }
+   
+
+.button-27{
+   appearance: none;
+  background-color: #000000;
+  border: 2px solid #1A1A1A;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+  min-height: 60px;
+  min-width: 0;
+  outline: none;
+  padding: 12px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 150px;
+  will-change: transform;
+}
+
+.button-27:disabled {
+  pointer-events: none;
+}
+
+.button-27:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.button-27:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+.webcam{
+  color: white;
+  background-color: #1A1A1A;
+  border: none;
+  padding: 15px 15px;
+  border-radius: 6px;
+  margin-top: 10px;
+  width: 300px;
+  cursor: pointer;
+}
+.webcam:hover{
+  background-color: #1a1a1ab3;
+}
+  </style>
+
+</head>
+
+<body>
+  <header>
+    <div class="navbar">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact Us</a>
+        </li>
+
+      </ul>
+      <div class="maincontent">
+        <p class="heading"> Anti- Drone System</p>
+        <p class="subheading">Upload any image or video !!</p>
+
+        <form action="/" method='POST' enctype="multipart/form-data">
+          {{  form.hidden_tag()}}
+          {{form.file()}} <br><br>
+          <button type="submit" class="button-27 "onclick="alert1()"{{ form.submit() }}Upload</button>
+  
+      </form>
+        
+      <br><br>
+      <p>OR</p> 
+      <button class="webcam"> <i class="fa-solid fa-camera fa-lg" style="color:#ffffff;"></i> Start Webcam</button>
+    
+      
+    
+  </header>
+  <script>
+    function alert1(){
+      alert("file has been uploaded")
+    }
+  </script>
+</body>
+
+</html>
